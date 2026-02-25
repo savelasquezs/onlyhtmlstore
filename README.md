@@ -56,11 +56,16 @@ Store/
 
 ## How to run
 
+Go to https://codesandbox.io/p/sandbox/github/savelasquezs/onlyhtmlstore/tree/main 
+to see both the files and web page running
+
 1. Clone or download the repository
 2. Make sure you have the `images/` folder with the referenced images
 3. Open `index.html` in your browser (double-click or drag the file)
 
 Or install live server on your favorite code editor.
+
+
 
 
 
