@@ -60,17 +60,11 @@ Store/
 2. Make sure you have the `images/` folder with the referenced images
 3. Open `index.html` in your browser (double-click or drag the file)
 
-Or use a local server:
+Or install live server on your favorite code editor.
 
-```bash
-# With Python 3
-python -m http.server 8000
 
-# With npx (Node.js)
-npx serve .
-```
 
-Then visit `http://localhost:8000` in your browser.
+
 
 ---
 
@@ -101,8 +95,8 @@ Then visit `http://localhost:8000` in your browser.
 
 ## Contact
 
-- **Email**: santiavelasquez25@gmail.com
-- **Phone**: 317-890-1234
+- **Email**: santyvano@outlook.com
+- **Phone**: 3127163848
 - **Address**: Calle 25 # 30-28, Medellín, Colombia
 
 ---
