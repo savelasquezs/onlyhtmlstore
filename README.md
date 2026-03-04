@@ -56,7 +56,7 @@ Store/
 
 ## How to run
 
-Go to https://codesandbox.io/p/sandbox/github/savelasquezs/onlyhtmlstore/tree/main 
+Go to https://codesandbox.io/p/sandbox/github/savelasquezs/onlyhtmlstore/tree/htmlonly 
 to see both the files and web page running
 
 1. Clone or download the repository
