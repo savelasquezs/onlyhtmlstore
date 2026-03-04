@@ -2,20 +2,31 @@
 
 **Where buying and selling is easy**
 
-Online store website built with pure HTML5. Technology product catalog with semantic structure, internal navigation, and purchase and contact forms.
+Online store website built with HTML5 and CSS. Technology product catalog with semantic structure, internal navigation, purchase and contact forms, and custom styling.
 
 ---
 
 ## Features
 
+### HTML Structure & Semantics
 - **Semantic structure**: Uses HTML5 tags (`header`, `nav`, `main`, `article`, `aside`, `section`, `footer`) for accessibility and SEO
 - **Internal navigation**: Anchor links (`#section`) to jump between sections without reloading the page
 - **Product catalog**: Articles with detailed specs (price, description, availability, brand, model)
-- **Featured products**: Best-selling products list with direct links to the catalog
+- **Featured products**: Best-selling products list (numbered) with direct links to the catalog
 - **Visual indicators**: Progress bars and meters for customer satisfaction and stock
 - **Forms**: Purchase (shipping) and contact forms with basic validation
 - **Warranty plans**: Comparison table (Basic, Pro, Premium)
-- **HTML only**: No external dependencies, heavy scripts, or styles
+
+### CSS Styling
+- **CSS variables**: Theme colors, shadows, and transitions defined in `:root`
+- **Layout**: Flexbox and CSS Grid 
+- **Fixed sidebar**: Navigation menu fixed on the left
+- **Section-based hierarchy**: Styles scoped under `#catalog`, `#cart`, `#plans`, etc.
+- **Shared patterns**: Card and hover effects to avoid redundancy
+- **Product grid**: 3-column catalog layout with card-style articles
+- **Hover effects**: Scale and color transitions on interactive elements
+- **Typography**: Segoe UI font family, consistent sizing
+- **No frameworks**: Pure HTML and CSS only
 
 ---
 
@@ -39,6 +50,7 @@ Online store website built with pure HTML5. Technology product catalog with sema
 ```
 Store/
 ├── index.html      # Main page
+├── styles.css      # Stylesheet (variables, layout, section-based styles)
 ├── images/         # Product images and logo
 │   ├── logo.png
 │   ├── pc.jpg
@@ -48,7 +60,8 @@ Store/
 │   ├── smartwatch.jpg
 │   ├── mouse.jpg
 │   ├── keyboard.jpg
-│   └── monitor.jpg
+│   ├── monitor.jpg
+│   └── cart.png
 └── README.md
 ```
 
@@ -80,7 +93,7 @@ Or install live server on your favorite code editor.
 | Home                  | Store welcome                  |
 | Catalog               | Full product catalog           |
 | Specifications        | Technical specs of the site    |
-| Best Selling Products | Best-selling products          |
+| Best Selling Products | Best-selling products (numbered list) |
 | Categories            | Category navigation            |
 | Indicators            | Satisfaction and stock per product |
 | Store                 | Purchase form                  |
@@ -93,8 +106,9 @@ Or install live server on your favorite code editor.
 
 ## Technologies
 
-- **HTML5** (semantic)
-- No frameworks or external libraries
+- **HTML5** (semantic structure)
+- **CSS3** (Flexbox, Grid, variables, transitions)
+- No JavaScript frameworks or external libraries
 
 ---
 
