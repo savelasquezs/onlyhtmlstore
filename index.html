@@ -30,6 +30,7 @@
                 <li><a href="#best-selling-products">Best Selling Products</a></li>
                 <li><a href="#categories">Categories</a></li>
                 <li><a href="#indicators">Indicators</a></li>
+                <li><a href="#activity">Orders &amp; messages</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#store">Store</a></li>
                 <li><a href="#plans">Warranty plans</a></li>
@@ -94,32 +95,32 @@
         <section id="store">
             <h2>Store</h2>
             <p>Fill out the form to purchase your products</p>
-            <form action="submit">
+            <form id="order-form" action="#" method="post">
                 <fieldset>
                     <legend>Shipping Information</legend>
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="store-name">Name</label>
+                        <input type="text" id="store-name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" required>
+                        <label for="store-last-name">Last Name</label>
+                        <input type="text" id="store-last-name" name="last-name" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" required minlength="10" maxlength="10">
+                        <label for="store-phone">Phone</label>
+                        <input type="tel" id="store-phone" name="phone" required minlength="10" maxlength="10">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required minlength="10" maxlength="100">
+                        <label for="store-email">Email</label>
+                        <input type="email" id="store-email" name="email" required minlength="10" maxlength="100">
                     </div>
                     <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" id="address" name="address" required minlength="10" maxlength="100">
+                        <label for="store-address">Address</label>
+                        <input type="text" id="store-address" name="address" required minlength="10" maxlength="100">
                     </div>
                     <div class="form-group">
-                        <label for="payment-method">Payment Method</label>
-                        <select id="payment-method" name="payment-method" required>
+                        <label for="store-payment-method">Payment Method</label>
+                        <select id="store-payment-method" name="payment-method" required>
                             <option value="cash">Cash</option>
                             <option value="credit-card">Credit Card</option>
                             <option value="debit-card">Debit Card</option>
@@ -127,15 +128,13 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="instructions">Aditional instructions</label>
-                        <textarea id="instructions" name="instructions"></textarea>
+                        <label for="store-instructions">Aditional instructions</label>
+                        <textarea id="store-instructions" name="instructions"></textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit">Submit</button>
                     </div>
                 </fieldset>
-
-
             </form>
         </section>
         <section id="plans">
@@ -155,57 +154,86 @@
         <section id="my-account">
             <h2>My Account</h2>
             <p>Welcome to your account <strong>Santiago Velásquez</strong></p>
-            <p>From here you can view your order history, update your profile, and manage your shipping addresses.</p>
-            <p>Need help? Visit our Contact section or call us at 317-890-1234.</p>
+            <p>From here you can view recent <a href="#activity">orders and messages</a>, update your profile, and manage your shipping addresses.</p>
+            <p>Need help? Visit our <a href="#contact">Contact</a> section or call us at 317-890-1234.</p>
+        </section>
+        <section id="activity">
+            <h2>Orders &amp; contact activity</h2>
+            <h3>Order requests</h3>
+            <p id="orders-empty" class="empty-msg">No orders yet.</p>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Payment</th>
+                        <th>Address</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="orders-table-body"></tbody>
+            </table>
+            <h3>Contact messages</h3>
+            <p id="messages-empty" class="empty-msg">No messages yet.</p>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="messages-table-body"></tbody>
+            </table>
         </section>
         <section id="cart">
             <h2>Cart</h2>
             <div class="cart-content">
                 <img src="images/cart.png" alt="Cart">
                 <p>Your cart is empty</p>
-                <button type="button">Shop now</button>
+                <a class="cart-shop-cta" href="#catalog">Shop now</a>
             </div>
         </section>
         <section id="contact">
             <h2>Contact</h2>
             <p>Contact us</p>
-            <form action="submit">
+            <form id="contact-form" action="#" method="post">
                 <fieldset>
                     <legend>Contact Information</legend>
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required minlength="10" maxlength="100">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" required minlength="10" maxlength="100">
                         <br />
                     </div>
                     <div class="form-group">
-                        <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" required minlength="10" maxlength="100">
+                        <label for="contact-last-name">Last Name</label>
+                        <input type="text" id="contact-last-name" name="last-name" required minlength="10" maxlength="100">
                         <br />
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" required minlength="10" maxlength="10">
+                        <label for="contact-phone">Phone</label>
+                        <input type="tel" id="contact-phone" name="phone" required minlength="10" maxlength="10">
                         <br />
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required minlength="10" maxlength="100">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email" required minlength="10" maxlength="100">
                         <br />
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message"></textarea>
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message"></textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit">Submit</button>
                     </div>
                 </fieldset>
-
             </form>
-
         </section>
         </div>
-        <script src="app.js"></script>
     </main>
     <footer>
         <div class="main-footer-info">
@@ -222,6 +250,8 @@
             <strong>Made with <span>❤</span> by Santiago Velásquez</strong>
         </div>
     </footer>
+    <div id="toast-container" aria-live="polite"></div>
+    <script src="app.js"></script>
 </body>
 
 </html>

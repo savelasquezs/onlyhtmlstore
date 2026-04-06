@@ -316,7 +316,8 @@ form button {
     text-align: center;
 }
 
-#cart button {
+#cart button,
+#cart .cart-shop-cta {
     margin: 0 auto;
     padding: 10px;
     border-radius: 5px;
@@ -325,9 +326,14 @@ form button {
     background-color: var(--color-primary);
     color: #fff;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
-#cart button:hover {
+#cart button:hover,
+#cart .cart-shop-cta:hover {
     background-color: var(--color-primary-dark);
     transition: var(--transition-default);
 }
@@ -345,6 +351,72 @@ form button {
 
 #plans tr:nth-child(even) {
     background-color: #c1c1f2;
+}
+
+/* ===== Activity dashboard (orders & messages) ===== */
+#activity .dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 2rem;
+}
+
+#activity .dashboard-table th,
+#activity .dashboard-table td {
+    border: 1px solid var(--color-border);
+    padding: 8px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+#activity .dashboard-table th {
+    background-color: var(--color-bg-surface);
+}
+
+#activity .dashboard-table tr:nth-child(even) {
+    background-color: #f8f8fc;
+}
+
+#activity .empty-msg {
+    margin: 0.5rem 0 0;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.btn-delete {
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #b33;
+    background: #fff;
+    color: #a22;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.btn-delete:hover {
+    background: #fee;
+}
+
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: min(360px, calc(100vw - 40px));
+    pointer-events: none;
+}
+
+.toast {
+    pointer-events: auto;
+    padding: 12px 16px;
+    background: var(--color-primary-dark);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
+    font-size: 0.95rem;
 }
 
 /* ===== Footer ===== */
