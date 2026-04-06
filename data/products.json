@@ -1,0 +1,222 @@
+{
+  "products": [
+    {
+      "slug": "pc",
+      "name": "Personal computer",
+      "category": "computers",
+      "brand": "Dell",
+      "model": "XPS Desktop",
+      "price": 500,
+      "availabilityUnits": 100,
+      "image": "images/pc.jpg",
+      "rating": {
+        "average": 4.2,
+        "max": 5,
+        "reviewCount": 128
+      },
+      "stock": {
+        "remaining": 4,
+        "outOf": 5
+      },
+      "shortDescription": "Powerful desktop for work and gaming.",
+      "description": "Powerful desktop computer ideal for work and gaming. Features a fast processor, ample storage, and expandable RAM for demanding applications."
+    },
+    {
+      "slug": "smartphone",
+      "name": "Smartphone",
+      "category": "smartphones",
+      "brand": "Apple",
+      "model": "iPhone 15",
+      "price": 200,
+      "availabilityUnits": 80,
+      "image": "images/smartphone.jpg",
+      "rating": {
+        "average": 4,
+        "max": 5,
+        "reviewCount": 342
+      },
+      "stock": {
+        "remaining": 4,
+        "outOf": 5
+      },
+      "shortDescription": "Great camera, long battery life, and premium build.",
+      "description": "Premium smartphone with a high-resolution display, advanced camera system, and long-lasting battery. Perfect for productivity and staying connected on the go."
+    },
+    {
+      "slug": "laptop",
+      "name": "Laptop",
+      "category": "computers",
+      "brand": "Dell",
+      "model": "XPS 13",
+      "price": 300,
+      "availabilityUnits": 60,
+      "image": "images/laptop.jpg",
+      "rating": {
+        "average": 3,
+        "max": 5,
+        "reviewCount": 201
+      },
+      "stock": {
+        "remaining": 3,
+        "outOf": 5
+      },
+      "shortDescription": "Lightweight and powerful for work and study.",
+      "description": "Lightweight and portable laptop with excellent performance for business and creative tasks. Features a bright display, comfortable keyboard, and all-day battery life."
+    },
+    {
+      "slug": "tablet",
+      "name": "Tablet",
+      "category": "tablets",
+      "brand": "Apple",
+      "model": "iPad Air",
+      "price": 400,
+      "availabilityUnits": 45,
+      "image": "images/tablet.jpg",
+      "rating": {
+        "average": 2,
+        "max": 5,
+        "reviewCount": 97
+      },
+      "stock": {
+        "remaining": 2,
+        "outOf": 5
+      },
+      "shortDescription": "Ideal for entertainment and productivity.",
+      "description": "Versatile tablet for reading, streaming, and light work. Large touchscreen, long battery life, and support for accessories like keyboards and stylus pens."
+    },
+    {
+      "slug": "smartwatch",
+      "name": "Smartwatch",
+      "category": "wearables",
+      "brand": "Apple",
+      "model": "Watch Series 9",
+      "price": 500,
+      "availabilityUnits": 55,
+      "image": "images/smartwatch.jpg",
+      "rating": {
+        "average": 1,
+        "max": 5,
+        "reviewCount": 56
+      },
+      "stock": {
+        "remaining": 1,
+        "outOf": 5
+      },
+      "shortDescription": "Health tracking, notifications, and custom watch faces.",
+      "description": "Feature-rich smartwatch with health tracking, notifications, and customizable watch faces. Water-resistant and perfect for fitness enthusiasts."
+    },
+    {
+      "slug": "mouse",
+      "name": "Mouse",
+      "category": "accessories",
+      "brand": "Logitech",
+      "model": "MX Master 3S",
+      "price": 50,
+      "availabilityUnits": 200,
+      "image": "images/mouse.jpg",
+      "rating": {
+        "average": 4,
+        "max": 5,
+        "reviewCount": 410
+      },
+      "stock": {
+        "remaining": 0,
+        "outOf": 5
+      },
+      "shortDescription": "Ergonomic wireless mouse for long sessions.",
+      "description": "Ergonomic wireless mouse designed for precision and comfort. Ideal for extended work sessions, gaming, or creative projects."
+    },
+    {
+      "slug": "keyboard",
+      "name": "Keyboard",
+      "category": "accessories",
+      "brand": "Apple",
+      "model": "Magic Keyboard",
+      "price": 100,
+      "availabilityUnits": 120,
+      "image": "images/keyboard.jpg",
+      "rating": {
+        "average": 2,
+        "max": 5,
+        "reviewCount": 88
+      },
+      "stock": {
+        "remaining": 0,
+        "outOf": 5
+      },
+      "shortDescription": "Responsive keys and sleek, compact design.",
+      "description": "Responsive keys and sleek design. Perfect for typing and gaming with reliable performance."
+    },
+    {
+      "slug": "monitor",
+      "name": "Monitor",
+      "category": "computers",
+      "brand": "Apple",
+      "model": "Studio Display",
+      "price": 100,
+      "availabilityUnits": 30,
+      "image": "images/monitor.jpg",
+      "rating": {
+        "average": 3,
+        "max": 5,
+        "reviewCount": 164
+      },
+      "stock": {
+        "remaining": 0,
+        "outOf": 5
+      },
+      "shortDescription": "Sharp resolution and accurate colors for creative work.",
+      "description": "High-quality display with vivid colors and sharp resolution. Suitable for work, design, and entertainment. Features adjustable stand and multiple connectivity options."
+    }
+  ],
+  "bestSellingOrder": [
+    "smartphone",
+    "laptop",
+    "tablet",
+    "smartwatch",
+    "mouse",
+    "keyboard"
+  ],
+  "categories": [
+    {
+      "label": "Computers",
+      "slug": "computers"
+    },
+    {
+      "label": "Smartphones",
+      "slug": "smartphones"
+    },
+    {
+      "label": "Tablets",
+      "slug": "tablets"
+    },
+    {
+      "label": "Smartwatches",
+      "slug": "smartwatches"
+    },
+    {
+      "label": "PC accessories",
+      "slug": "pc-accessories"
+    }
+  ],
+  "warrantyPlans": [
+    {
+      "id": "basic",
+      "name": "Basic",
+      "price": 10,
+      "featureSummary": "100 products"
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "price": 20,
+      "featureSummary": "200 products"
+    },
+    {
+      "id": "premium",
+      "name": "Premium",
+      "price": 30,
+      "featureSummary": "300 products"
+    }
+  ]
+}
