@@ -2,35 +2,78 @@
 
 **Where buying and selling is easy**
 
-Online store website built with HTML5 and CSS. Technology product catalog with semantic structure, internal navigation, purchase and contact forms, and custom styling.
+Tienda en línea en HTML, CSS y JavaScript (vanilla). Catálogo de productos cargado desde JSON, carrito de compras, paneles de pedidos y mensajes, y formularios con validación. Arquitectura **MVC** en módulos ES.
 
 ---
 
-## Features
+## Características
 
-### HTML Structure & Semantics
-- **Semantic structure**: Uses HTML5 tags (`header`, `nav`, `main`, `article`, `aside`, `section`, `footer`) for accessibility and SEO
-- **Internal navigation**: Anchor links (`#section`) to jump between sections without reloading the page
-- **Product catalog**: Articles with detailed specs (price, description, availability, brand, model)
-- **Featured products**: Best-selling products list (numbered) with direct links to the catalog
-- **Visual indicators**: Progress bars and meters for customer satisfaction and stock
-- **Forms**: Purchase (shipping) and contact forms with basic validation
-- **Warranty plans**: Comparison table (Basic, Pro, Premium)
+### Estructura HTML
+- Marcas semánticas HTML5 (`header`, `nav`, `main`, `article`, `aside`, `section`, `footer`)
+- Navegación interna con anclas (`#catalog`, `#cart`, etc.)
+- Catálogo generado desde `data/products.json`
+- Lista de más vendidos, categorías, planes de garantía e indicadores (rating / stock)
+- Formulario de compra (envío) y formulario de contacto
 
-### CSS Styling
-- **CSS variables**: Theme colors, shadows, and transitions defined in `:root`
-- **Layout**: Flexbox and CSS Grid 
-- **Fixed sidebar**: Navigation menu fixed on the left
-- **Section-based hierarchy**: Styles scoped under `#catalog`, `#cart`, `#plans`, etc.
-- **Shared patterns**: Card and hover effects to avoid redundancy
-- **Product grid**: 3-column catalog layout with card-style articles
-- **Hover effects**: Scale and color transitions on interactive elements
-- **Typography**: Segoe UI font family, consistent sizing
-- **No frameworks**: Pure HTML and CSS only
+### Estilos (CSS)
+- Variables en `:root` (colores, radios, sombras)
+- Flexbox y Grid; barra lateral fija; estilos por sección (`#catalog`, `#cart`, …)
+- Clase utilitaria `.is-hidden` para mostrar u ocultar bloques (p. ej. carrito vacío vs. checkout)
+
+### Lógica (JavaScript, ES modules)
+- **`model.js`**: datos y reglas — catálogo, carrito, pedidos, mensajes
+- **`view.js`**: renderizado en el DOM y notificaciones tipo toast
+- **`controller.js`**: enlace de eventos (clicks, envíos de formularios)
+- **`formValidation.js`**: validación de nombres y normalización de teléfono (solo dígitos) antes del envío
+- **`app.js`**: entrada; importa el controlador e inicia la app tras `DOMContentLoaded`
+
+Los datos del catálogo se obtienen con `fetch("./data/products.json")`. **El sitio debe servirse por HTTP** (no abrir `index.html` como `file://`), para que funcionen los módulos y la petición al JSON.
 
 ---
 
-## Catalog products
+## Estructura del proyecto
+
+```
+Store/
+├── index.html          # Página principal (script type="module" → app.js)
+├── app.js              # Punto de entrada
+├── model.js            # Modelo
+├── view.js             # Vista
+├── controller.js       # Controlador
+├── formValidation.js   # Validación de formularios
+├── styles.css
+├── data/
+│   └── products.json   # Productos, categorías, planes, más vendidos
+├── images/             # Logo, imágenes de productos, ícono de carrito
+└── README.md
+```
+
+---
+
+## Cómo ejecutar en local
+
+1. Clona o descarga el repositorio.
+2. Asegúrate de tener la carpeta `images/` y `data/products.json`.
+3. Sirve la raíz del proyecto con un servidor HTTP, por ejemplo:
+   - **VS Code / Cursor:** extensión “Live Server” (abrir con Live Server).
+   - **Node:** `npx serve .` o `npx http-server .`
+   - **Python:** `python -m http.server 8080` (desde la carpeta del proyecto)
+
+4. Abre la URL que indique el servidor (p. ej. `http://127.0.0.1:5500`).
+
+Sin servidor, el navegador puede bloquear módulos o `fetch` al abrir el archivo directamente.
+
+---
+
+## Validación de formularios (resumen)
+
+- Nombres y apellidos: mínimo 3 caracteres, máximo 80; no solo dígitos
+- Teléfono: solo números, entre 7 y 15 dígitos (se eliminan caracteres no numéricos al enviar)
+- Email, dirección y mensaje de contacto según atributos y reglas en `index.html` y `formValidation.js`
+
+---
+
+## Catálogo de ejemplo (referencia)
 
 | Product    | Brand    | Price |
 |------------|----------|-------|
@@ -43,80 +86,40 @@ Online store website built with HTML5 and CSS. Technology product catalog with s
 | Keyboard   | Apple    | $100  |
 | Monitor    | Apple    | $100  |
 
----
-
-## Project structure
-
-```
-Store/
-├── index.html      # Main page
-├── styles.css      # Stylesheet (variables, layout, section-based styles)
-├── images/         # Product images and logo
-│   ├── logo.png
-│   ├── pc.jpg
-│   ├── smartphone.jpg
-│   ├── laptop.jpg
-│   ├── tablet.jpg
-│   ├── smartwatch.jpg
-│   ├── mouse.jpg
-│   ├── keyboard.jpg
-│   ├── monitor.jpg
-│   └── cart.png
-└── README.md
-```
+Los artículos reales dependen de `data/products.json`.
 
 ---
 
-## How to run
+## Secciones de la página
 
-Go to https://codesandbox.io/p/sandbox/github/savelasquezs/onlyhtmlstore/tree/css 
-to see both the files and web page running
-
-1. Clone or download the repository
-2. Make sure you have the `images/` folder with the referenced images
-3. Open `index.html` in your browser (double-click or drag the file)
-
-Or install live server on your favorite code editor.
-
-
-
-
-
-
-
----
-
-## Page sections
-
-| Section               | Description                    |
-|-----------------------|--------------------------------|
-| Home                  | Store welcome                  |
-| Catalog               | Full product catalog           |
-| Specifications        | Technical specs of the site    |
-| Best Selling Products | Best-selling products (numbered list) |
-| Categories            | Category navigation            |
-| Indicators            | Satisfaction and stock per product |
-| Store                 | Purchase form                  |
-| Warranty plans        | Warranty plans                 |
-| My Account            | User account area              |
-| Cart                  | Shopping cart                  |
-| Contact               | Contact form                   |
+| Sección               | Descripción                                      |
+|-----------------------|--------------------------------------------------|
+| Home                  | Bienvenida                                       |
+| Catalog               | Catálogo de productos                            |
+| Specifications        | Especificaciones del sitio                       |
+| Best Selling Products | Productos destacados                             |
+| Categories            | Enlaces por categoría                            |
+| Indicators            | Satisfacción y stock                             |
+| Store                 | Área de tienda / pedidos en tabla                |
+| Warranty plans        | Planes de garantía                               |
+| My Account            | Cuenta de usuario (placeholder)                  |
+| Cart                  | Carrito y checkout                               |
+| Contact               | Formulario de contacto                           |
 
 ---
 
-## Technologies
+## Tecnologías
 
-- **HTML5** (semantic structure)
-- **CSS3** (Flexbox, Grid, variables, transitions)
-- No JavaScript frameworks or external libraries
+- HTML5, CSS3
+- JavaScript (módulos ES, sin frameworks)
 
 ---
 
-## Contact
+## Contacto (proyecto)
 
-- **Email**: santyvano@outlook.com
-- **Phone**: 3127163848
-- **Address**: Calle 25 # 30-28, Medellín, Colombia
+- **Email:** santyvano@outlook.com
+- **Teléfono:** 3127163848
+- **Dirección:** Calle 25 # 30-28, Medellín, Colombia
 
 ---
 
