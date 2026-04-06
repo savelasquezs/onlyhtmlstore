@@ -31,6 +31,12 @@ Los datos del catálogo se obtienen con `fetch("./data/products.json")`. **El si
 
 ---
 
+## Vista online
+
+Demo en CodeSandbox (rama **`spa`** del repositorio): [Abrir en CodeSandbox](https://codesandbox.io/p/sandbox/github/savelasquezs/onlyhtmlstore/tree/spa)
+
+---
+
 ## Estructura del proyecto
 
 ```
