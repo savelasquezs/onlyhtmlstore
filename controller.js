@@ -1,11 +1,19 @@
 /**
- * CONTROLLER: event wiring and flow
+ * Controller layer: wires user events to Model mutations and View updates.
+ *
+ * Does not build HTML strings; delegates rendering to View and state to Model.
  */
+
 import { Model } from "./model.js";
 import { View } from "./view.js";
 import { FormValidation } from "./formValidation.js";
 
 export const Controller = {
+    /**
+     * Bootstraps the app: load catalog, initial render, register all listeners.
+     * On failure, shows a user-visible error in the catalog area.
+     * @returns {Promise<void>}
+     */
     async init() {
         try {
             await Model.loadCatalog();
@@ -23,6 +31,9 @@ export const Controller = {
         }
     },
 
+    /**
+     * Delegated click on `#catalog`: if target is inside a product card, add that product to the cart.
+     */
     handleCatalogProductClick() {
         document.getElementById("catalog").addEventListener("click", (e) => {
             const card = e.target.closest("article.product-card[data-product-slug]");
@@ -37,6 +48,9 @@ export const Controller = {
         });
     },
 
+    /**
+     * Delegated click on `#cart`: remove line or adjust quantity via buttons with `data-slug`.
+     */
     handleCartPanel() {
         document.getElementById("cart").addEventListener("click", (e) => {
             const removeBtn = e.target.closest(".cart-remove-line");
@@ -61,6 +75,9 @@ export const Controller = {
         });
     },
 
+    /**
+     * Checkout form: validates cart and fields, then persists order and clears cart.
+     */
     handleOrderSubmit() {
         const form = document.getElementById("order-form");
         if (!form) return;
@@ -97,6 +114,9 @@ export const Controller = {
         });
     },
 
+    /**
+     * Contact form: validates name fields and phone, then appends a message record.
+     */
     handleContactSubmit() {
         const form = document.getElementById("contact-form");
         form.addEventListener("submit", (e) => {
@@ -120,6 +140,9 @@ export const Controller = {
         });
     },
 
+    /**
+     * Delete buttons in orders and messages tables (confirmed via `confirm()`).
+     */
     handleDashboardDeletes() {
         View.ordersTableBody.addEventListener("click", (e) => {
             const del = e.target.closest(".btn-delete[data-kind='order']");
